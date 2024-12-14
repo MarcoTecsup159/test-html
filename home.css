@@ -1,0 +1,112 @@
+/* Variables de colores */
+:root {
+  --primary-blue: #1E90FF;
+  --white: #FFFFFF;
+  --red: #FF4C4C;
+  --black: #000000;
+  --light-grey: #F5F5F5;
+}
+
+/* Estilo general */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: var(--light-grey);
+  color: var(--black);
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--white), var(--red));
+  background-size: 400% 400%;
+  animation: gradientShift 6s ease infinite;
+  color: var(--white);
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación del degradado */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fecha al lado izquierdo */
+.header-left {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Barra de navegación */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.navbar ul li a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  background: var(--black);
+}
+
+/* Animación de los botones */
+.navbar ul li a:hover {
+  background: var(--red);
+  color: var(--white);
+  transform: scale(1.1);
+  border: 2px solid var(--white);
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar ul li a {
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-left {
+    font-size: 0.8rem;
+  }
+}
